@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import MainIndex from './components/MainIndex/MainIndex'
+import NavBar from './components/navbar/NavBar'
+import Carousel from './components/Carousel/ProductCarousel'
 import './App.css';
 
 class App extends Component {
@@ -8,22 +12,10 @@ class App extends Component {
   render() {
     return (
       <div>
-
-        <div className={'navbar1 flex-column'}>
-          <div className={'flex-row navbar2'}>
-            <div>
-              sadfcsd
-              <img></img>
-            </div>
-            <input className={'navbar-input'} type='text' placeholder='Buscar productos, marcas y más...'/>
-            <div>
-              sadcasd
-              <img></img>
-            </div>
-          </div>
-        </div>
-
-
+        <Router>
+          <Route path="/" exact component={MainIndex} />
+          <Route/>
+        </Router>
       </div>
     )
   }
