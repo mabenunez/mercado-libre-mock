@@ -9,12 +9,13 @@ class App extends Component {
   constructor(props) {
     super(props)
   }
+  
   render() {
     return (
       <div>
         <Router>
           <Route path="/" exact component={MainIndex} />
-          <Route/>
+          <Route path={'/carousel/:site'} component={Carousel}/>
         </Router>
       </div>
     )
