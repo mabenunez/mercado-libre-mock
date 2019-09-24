@@ -1,0 +1,22 @@
+.listItem {
+    width: 18%;
+    height: 314px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+.productImg {
+    width: 100%;
+}
+.productImg img {
+    width: 100%;
+}
+.shippingIcon {
+    fill: #39b54a;
+    width: 20px;
+}
+.shippingIcon path{
+    width: 100%;
+}
+.prodInfoContainer {
+    border-top: 1px solid rgba(51,51,51,.1);
+}

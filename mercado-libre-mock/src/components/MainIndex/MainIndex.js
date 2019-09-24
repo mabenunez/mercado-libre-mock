@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from './mainIndex.module.css'
 
 class MainIndex extends Component {
@@ -12,11 +12,11 @@ class MainIndex extends Component {
                     </section>
                     <section>
                         <ul className={styles.countryList}>
-                            <li><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/ar.png' alt={'argentinian-flag'}/></span>Argentina</li>
-                            <li><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/bo.png' alt={'bolivian-flag'}/></span>Bolivia</li>
-                            <li><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/br.png' alt={'brazilian-flag'}/></span>Brasil</li>
-                            <li><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/co.png' alt={'colombian-flag'}/></span>Colombia</li>
-                            </ul>
+                            <Link to={'/carousel/MLA'} className={styles.country}><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/ar.png' alt={'argentinian-flag'}/></span>Argentina</Link>
+                            <Link to={'/carousel/MBO'} className={styles.country}><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/bo.png' alt={'bolivian-flag'}/></span>Bolivia</Link>
+                            <Link to={'/carousel/MLB'} className={styles.country}><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/br.png' alt={'brazilian-flag'}/></span>Brasil</Link>
+                            <Link to={'/carousel/MCO'} className={styles.country}><span><img className={styles.flag} src='https://flagpedia.net/data/flags/w1160/co.png' alt={'colombian-flag'}/></span>Colombia</Link>
+                        </ul>
                     </section>
                 </div>
             </main>
