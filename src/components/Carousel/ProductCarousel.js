@@ -25,20 +25,20 @@ class ProductCarousel extends Component {
     }
   }
   render() {
-      const products = this.state.productsArray.map((prod, prodKey, newProdArr) => {
-        return (
-          <ProductCard 
-            key={prodKey}
-            imgSrc={prod.thumbnail}
-            imgAlt={prod.title}
-            title={prod.title}
-            price={prod.price}
-            currency={prod.currency_id}
-            // nCuotas={prod.installments.quantity}
-            // montoCuotas={prod.installments.amount}
-          />
-        )
-      })
+    const products = this.state.productsArray.map((prod, prodKey, newProdArr) => {
+      return (
+        <ProductCard 
+          key={prodKey}
+          imgSrc={prod.thumbnail}
+          imgAlt={prod.title}
+          title={prod.title}
+          price={prod.price}
+          currency={prod.currency_id}
+          // nCuotas={prod.installments.quantity}
+          // montoCuotas={prod.installments.amount}
+        />
+      )
+    })
     return (
       <ul className={styles.carouselContainer}>
         {this.state.loading ? (
