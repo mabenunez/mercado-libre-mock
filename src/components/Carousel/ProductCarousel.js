@@ -5,9 +5,9 @@ import styles from './productCarousel.module.css'
 class ProductCarousel extends Component {
   constructor(props){
     super(props)
-    this.products=null;
     this.state = {
-      productsArray : null
+      productsArray : [],
+      loading : true
     } 
   }
 
@@ -17,15 +17,15 @@ class ProductCarousel extends Component {
       const data = await fetch(`https://api.mercadolibre.com/sites/${countryId}/search?q=tv&limit=5`);
       const result = await data.json()
       this.setState({
-        productsArray : result.results
+        productsArray : result.results,
+        loading : false
       })
     }catch(err) {
       console.log(err)
     }
   }
   render() {
-    if (this.state.productsArray !== null) {
-      this.products = this.state.productsArray.map((prod, prodKey, newProdArr) => {
+      const products = this.state.productsArray.map((prod, prodKey, newProdArr) => {
         return (
           <ProductCard 
             key={prodKey}
@@ -39,11 +39,17 @@ class ProductCarousel extends Component {
           />
         )
       })
-    }
     return (
-       <ul className={styles.carouselContainer}>
-         {this.products}
-       </ul>
+      <ul className={styles.carouselContainer}>
+        {this.state.loading ? (
+          <span>cargando</span>
+        ) : (
+          <React.Fragment>
+            {products}
+          </React.Fragment>
+        )
+        }
+      </ul>
     );
   }
 }
